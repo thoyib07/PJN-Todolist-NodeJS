@@ -13,10 +13,19 @@ export class TodolistService {
             })
         });
     }
-    
+
     getTodoList(req,res){
-        const json = this.getJsonTodoList();
-        res.write(json);
+        res.write(this.getJsonTodoList());
         res.end();
+    }
+
+    createTodo(req,res){
+        req.addListener("data",(data)=>{
+            const body = JSON.parse(data.toString());
+            this.todolist.push(body.todo);
+
+            res.write(this.getJsonTodoList());
+            res.end();
+        });        
     }
 }
