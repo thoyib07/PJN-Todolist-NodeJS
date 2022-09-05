@@ -1,0 +1,147 @@
+{
+    "openapi": "3.0.3",
+    "info": {
+        "title": "NodeJS Todolist API",
+        "description": "NodeJS Todolist API",
+        "version": "1.0.0"
+    },
+    "servers": [
+        {
+            "url": "http://localhost:3000"
+        }
+    ],
+    "paths": {
+        "/":{
+            "get":{
+                "responses": {
+                    "200":{
+                        "description": "Get All Todolist",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Responses"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "post":{
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "todo":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Create New Todolist",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Responses"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "delete":{
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "id":{
+                                        "type": "number"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Delete Todolist",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Responses"
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "put":{
+                "requestBody":{
+                    "content": {
+                        "application/json":{
+                            "schema":{
+                                "type": "object",
+                                "properties": {
+                                    "id":{
+                                        "type": "number"
+                                    },
+                                    "todo":{
+                                        "type": "string"
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200":{
+                        "description": "Update Todolist",
+                        "content": {
+                            "application/json":{
+                                "schema":{
+                                    "$ref":"#/components/schemas/Responses"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "components": {
+        "schemas": {
+            "Responses":{
+                "type": "object",
+                "properties": {
+                    "code":{
+                        "type": "number"
+                    },
+                    "status":{
+                        "type": "string"
+                    },
+                    "data":{
+                        "type": "array",
+                        "items":{
+                            "type": "object",
+                            "properties": {
+                                "id":{
+                                    "type": "number"
+                                },
+                                "todo":{
+                                    "type": "string"
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
