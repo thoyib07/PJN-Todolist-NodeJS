@@ -20,3 +20,14 @@ Accept: application/json
     "id":2,
     "todo":"Belajar NodeJS Thoyib Hidayat"
 }
+
+
+###
+
+DELETE http://localhost:3000
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id":20
+}

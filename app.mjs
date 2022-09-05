@@ -18,6 +18,9 @@ const server = http.createServer((req,res)=>{
         case "PUT":
             service.updateTodo(req,res);
             break;
+        case "DELETE":
+            service.deleteTodo(req,res);
+            break;
     
         default:
             break;
