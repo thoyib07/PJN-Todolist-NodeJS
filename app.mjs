@@ -15,6 +15,9 @@ const server = http.createServer((req,res)=>{
         case "POST":
             service.createTodo(req,res);
             break;
+        case "PUT":
+            service.updateTodo(req,res);
+            break;
     
         default:
             break;

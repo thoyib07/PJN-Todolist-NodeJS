@@ -9,3 +9,14 @@ Accept: application/json
 {
     "todo": "Thoyib Hidayat Test lagi fjshdfkjh"
 }
+
+###
+
+PUT http://localhost:3000
+Content-Type: application/json
+Accept: application/json
+
+{
+    "id":2,
+    "todo":"Belajar NodeJS Thoyib Hidayat"
+}
